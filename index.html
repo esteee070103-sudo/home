@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여행 한 페이지 | 나만의 여행 일정</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">✈ 여행 한 페이지</a>
+    <nav><a href="#planner">일정 만들기</a><a href="#mytrip">내 여행</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">MY LITTLE TRIP JOURNAL</span>
+        <h1>여행의 모든 순간을<br><em>한 페이지에</em> 정리해요.</h1>
+        <p>여행지부터 날짜별 일정까지, 나만의 여행 계획을 쉽고 예쁘게 기록해 보세요.</p>
+        <a class="primary-btn" href="#planner">여행 계획 시작하기 <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-label="여행 풍경 일러스트">
+        <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="mountain back"></div><div class="mountain front"></div>
+        <div class="lake"></div><div class="art-label">YOUR NEXT<br>ADVENTURE</div>
+      </div>
+    </section>
+
+    <section class="section" id="planner">
+      <div class="section-heading">
+        <div><span class="eyebrow">PLAN YOUR TRIP</span><h2>새로운 여행 만들기</h2></div>
+        <p>기본 정보를 입력하고<br>여행 일정을 채워 보세요.</p>
+      </div>
+      <form id="tripForm" class="trip-form">
+        <label>여행 이름<input id="tripName" type="text" placeholder="예: 제주도 힐링 여행" required></label>
+        <label>여행지<input id="destination" type="text" placeholder="예: 제주도" required></label>
+        <label>출발일<input id="startDate" type="date" required></label>
+        <label>도착일<input id="endDate" type="date" required></label>
+        <button class="primary-btn" type="submit">여행 정보 저장하기 <span>＋</span></button>
+      </form>
+      <p id="formMessage" class="message" aria-live="polite"></p>
+    </section>
+
+    <section class="section trip-section" id="mytrip">
+      <div class="section-heading">
+        <div><span class="eyebrow">MY ITINERARY</span><h2>나의 여행 일정</h2></div>
+        <span class="small-note">일정을 추가하고 자유롭게 수정해 보세요.</span>
+      </div>
+      <div id="tripSummary" class="trip-summary empty-summary">
+        <span class="summary-icon">🧳</span>
+        <div><strong>아직 등록된 여행이 없어요.</strong><p>위에서 여행 정보를 먼저 저장해 주세요.</p></div>
+      </div>
+
+      <div id="scheduleArea" class="schedule-area hidden">
+        <div class="schedule-toolbar">
+          <div><span class="eyebrow">DAILY PLAN</span><h3>하루하루 기록하기</h3></div>
+          <button id="addDayBtn" class="outline-btn" type="button">＋ 일정 추가</button>
+        </div>
+        <div id="dayList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>✈ 여행 한 페이지</span><p>당신의 다음 여행을 응원합니다.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
